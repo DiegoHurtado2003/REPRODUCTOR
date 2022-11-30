@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 
         mediaplayer = MediaPlayer.create(this, playlist[contador]);
-        mediaplayer2 = MediaPlayer.create(this, Uri.parse("https://www.youtube.com/watch?v=Gzs60iBgd3E)"))
+        mediaplayer2 = MediaPlayer.create(this, Uri.parse("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3"))
 
 
 
@@ -168,6 +168,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 //startActivity(Intent(this, VideoActivity::class.java))
                 intent =Intent(this, VideoActivity::class.java).apply {  }
                 startActivity(intent)
+                if (mediaplayer?.isPlaying == true) {
+                    mediaplayer!!.pause()
+                    btnPlay!!.setImageResource(R.drawable.play)
+                }
             }
 
 

@@ -7,38 +7,34 @@
     tools:context=".VideoActivity">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="742dp"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        >
+        android:layout_marginTop="-24dp"
+        android:orientation="vertical">
 
-        <Button
-            android:text="PLAY"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonPlay1"
-            android:layout_marginBottom="20dp" />
-
-        <Button
-            android:text="PAUSE"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonPause1"
-            android:layout_marginBottom="20dp"/>
-
-        <Button
-            android:text="STOP"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/buttonStop1"
-            />
 
         <VideoView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/videoView" />
+            android:id="@+id/vistaVideos"
+            android:layout_width="393dp"
+            android:layout_height="350dp"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:id="@+id/songNameVideo"
+            android:layout_width="299dp"
+            android:layout_height="83dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="1dp"
+            android:layout_marginBottom="1dp"
+            android:adjustViewBounds="true"
+            android:text="Nombre de la canción que se está reproduciendo ahora mismo"
+            android:textAllCaps="true"
+            android:textSize="15dp"
+            android:textStyle="bold" />
+
 
     </LinearLayout>
 </RelativeLayout>
