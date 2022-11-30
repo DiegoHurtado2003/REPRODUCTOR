@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import java.io.IOException
 
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
@@ -152,20 +153,22 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             }
 
             R.id.buttonStreaming ->{
-/*
-              try {
-                    mediaplayer2!!.prepareAsync()
-                    mediaplayer2!!.seekTo(0)
-                    mediaplayer2!!.start()
-                } catch (e: IOException) {
-                    e.printStackTrace()
+                mediaplayer!!.pause()
+                imageview?.setImageResource(R.drawable.online_music_foto)
+                textView!!.text = "Música online"
+                mediaplayer = MediaPlayer.create(this, Uri.parse("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3"));
+                btnPlay = findViewById(R.id.buttonPlay)
+                if (mediaplayer?.isPlaying == true) {
+                    mediaplayer!!.pause()
+                    btnPlay!!.setImageResource(R.drawable.play)
+                } else {
+                    btnPlay!!.setImageResource(R.drawable.pause)
+                    mediaplayer!!.start()
+
                 }
- */
-                Toast.makeText(this,
-                    "No funciona🥲", Toast.LENGTH_SHORT).show()
             }
             R.id.buttonVideo ->{
-                //startActivity(Intent(this, VideoActivity::class.java))
+
                 intent =Intent(this, VideoActivity::class.java).apply {  }
                 startActivity(intent)
                 if (mediaplayer?.isPlaying == true) {
